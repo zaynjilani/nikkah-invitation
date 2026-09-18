@@ -6,7 +6,7 @@ Place your chosen music file here as:
 
 No file is bundled with this project — you must supply your own
 royalty-free / licensed track (Nasheed, instrumental, or any music you
-have the rights to use). Good royalty-free sources include:
+have the rights to use). Good royalty-free sources includes:
 
 - Your own licensed purchase (Envato Elements, Artlist, Soundstripe, etc.)
 - Nasheed artists who explicitly permit free use with attribution
