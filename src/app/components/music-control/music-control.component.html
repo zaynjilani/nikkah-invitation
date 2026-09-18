@@ -1,0 +1,23 @@
+<button
+  type="button"
+  class="music-control"
+  (click)="toggle()"
+  [attr.aria-label]="music.playing() ? 'Pause background music' : 'Play background music'"
+  [attr.aria-pressed]="music.playing()"
+>
+  <ng-container *ngIf="music.playing(); else pausedIcon">
+    <!-- Playing: sound note icon -->
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M9 18V6l11-2v12M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm11-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+      />
+    </svg>
+  </ng-container>
+  <ng-template #pausedIcon>
+    <!-- Paused: muted / play indicator icon -->
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path fill="currentColor" d="M8 5v14l11-7L8 5Z" opacity="0.9" />
+    </svg>
+  </ng-template>
+</button>

@@ -1,0 +1,39 @@
+<section class="door-scene" aria-label="Wedding invitation front door">
+  <div class="door-frame">
+    <div class="door-panel door-panel--left" [class.is-open]="isOpening">
+      <div class="door-panel__inner">
+        <span class="ornament ornament--top">❋</span>
+        <div class="panel-carving"></div>
+      </div>
+    </div>
+
+    <div class="door-panel door-panel--right" [class.is-open]="isOpening">
+      <div class="door-panel__inner">
+        <span class="ornament ornament--top">❋</span>
+        <div class="panel-carving"></div>
+      </div>
+    </div>
+
+    <div class="door-center" [class.is-open]="isOpening">
+      <p class="door-center__label">{{ invitation.event }}</p>
+      <h1 class="door-center__names">
+        {{ invitation.groom.split(' ')[1] }} &amp; {{ invitation.bride.split(' ')[0] }}
+      </h1>
+
+      <button
+        type="button"
+        class="tap-to-open"
+        (click)="handleOpen()"
+        (keydown)="handleKeydown($event)"
+        [attr.aria-label]="'Tap to open the wedding invitation of ' + invitation.groom + ' and ' + invitation.bride"
+        [disabled]="isOpening"
+      >
+        <span class="tap-to-open__ring"></span>
+        <span class="tap-to-open__text">Tap to Open</span>
+      </button>
+    </div>
+
+    <div class="door-handle door-handle--left" [class.is-open]="isOpening"></div>
+    <div class="door-handle door-handle--right" [class.is-open]="isOpening"></div>
+  </div>
+</section>

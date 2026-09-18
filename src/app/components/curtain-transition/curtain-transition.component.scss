@@ -1,0 +1,84 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: block;
+  pointer-events: none;
+}
+
+.curtain-scene {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--ivory);
+}
+
+.curtain {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 52%;
+  display: flex;
+  background: linear-gradient(180deg, var(--champagne) 0%, var(--soft-gold) 50%, var(--champagne) 100%);
+  box-shadow: 0 0 60px rgba(63, 64, 56, 0.2) inset;
+  transition: transform 1.4s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
+}
+
+.curtain--left {
+  left: 0;
+  justify-content: flex-end;
+
+  &.is-open {
+    transform: translateX(-100%);
+  }
+}
+
+.curtain--right {
+  right: 0;
+
+  &.is-open {
+    transform: translateX(100%);
+  }
+}
+
+.curtain__fold {
+  flex: 1;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(63, 64, 56, 0.08), transparent 60%);
+
+  &:nth-child(even) {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18) 60%);
+  }
+}
+
+.curtain__tassel {
+  position: absolute;
+  bottom: 8%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--ivory), var(--soft-gold));
+  box-shadow: 0 4px 10px rgba(63, 64, 56, 0.25);
+}
+
+.curtain--left .curtain__tassel {
+  right: 8%;
+}
+
+.curtain--right .curtain__tassel {
+  left: 8%;
+}
+
+.curtain-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 253, 244, 0.9), transparent 60%);
+  opacity: 0;
+  transition: opacity 1s ease 0.4s;
+}
+
+.curtain-glow.is-open {
+  opacity: 1;
+}

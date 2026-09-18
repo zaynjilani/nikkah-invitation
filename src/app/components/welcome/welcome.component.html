@@ -1,0 +1,13 @@
+<section class="welcome" aria-labelledby="welcome-heading">
+  <span class="welcome__ornament" aria-hidden="true">۞</span>
+
+  <h2 id="welcome-heading" class="sr-only-heading">A Heartfelt Invitation</h2>
+
+  <p class="welcome__message" appScrollReveal>{{ invitation.welcomeMessage }}</p>
+
+  <div class="gold-divider" appScrollReveal [revealDelay]="150"></div>
+
+  <p class="welcome__sub-message" appScrollReveal [revealDelay]="250">
+    {{ invitation.welcomeSubMessage }}
+  </p>
+</section>

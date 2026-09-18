@@ -1,0 +1,20 @@
+<app-invitation-door
+  *ngIf="stage === 'door'"
+  (opened)="onDoorOpened()"
+></app-invitation-door>
+
+<app-curtain-transition
+  *ngIf="stage === 'curtain'"
+  (curtainOpened)="onCurtainOpened()"
+></app-curtain-transition>
+
+<main class="invitation" [class.invitation--visible]="contentVisible" [attr.aria-hidden]="!contentVisible">
+  <app-hero></app-hero>
+  <app-welcome></app-welcome>
+  <app-scratch-reveal></app-scratch-reveal>
+  <app-countdown></app-countdown>
+  <app-location></app-location>
+  <app-footer></app-footer>
+</main>
+
+<app-music-control *ngIf="contentVisible"></app-music-control>

@@ -1,0 +1,40 @@
+<section class="location-section" aria-labelledby="venue-heading">
+  <h2 id="venue-heading" class="location-heading" appScrollReveal>The Venue</h2>
+
+  <div class="location-details" appScrollReveal [revealDelay]="100">
+    <p class="location-event">{{ invitation.event }}</p>
+    <p class="location-date">{{ invitation.date }}</p>
+    <p class="location-time">{{ invitation.time }}</p>
+    <p class="location-address" *ngIf="hasAddress">{{ invitation.venue.address }}</p>
+  </div>
+
+  <div class="gold-divider" appScrollReveal [revealDelay]="150"></div>
+
+  <div class="map-frame" appScrollReveal [revealDelay]="250">
+    <iframe
+      *ngIf="mapConfigured; else mapPlaceholder"
+      class="map-frame__iframe"
+      [src]="mapEmbedUrl"
+      title="Map showing the Nikkah venue location"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+
+    <ng-template #mapPlaceholder>
+      <div class="map-placeholder">
+        <span class="map-placeholder__icon" aria-hidden="true">📍</span>
+        <p>Venue details coming soon</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <a
+    *ngIf="mapConfigured"
+    class="view-location-btn"
+    [href]="directionsUrl"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    View Location
+  </a>
+</section>

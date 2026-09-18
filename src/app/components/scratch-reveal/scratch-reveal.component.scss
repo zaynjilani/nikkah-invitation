@@ -1,0 +1,75 @@
+.scratch-section {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 6rem;
+  text-align: center;
+}
+
+.scratch-heading {
+  font-family: var(--font-accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  color: var(--olive);
+  margin-bottom: 2rem;
+}
+
+.scratch-stage {
+  position: relative;
+  width: min(100%, 340px);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft), 0 0 0 1px rgba(184, 155, 94, 0.4);
+  background: var(--white);
+}
+
+.scratch-stage__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: radial-gradient(circle at 50% 40%, var(--ivory), var(--cream));
+  padding: 1rem;
+}
+
+.scratch-heart {
+  font-size: clamp(2.4rem, 8vw, 3.2rem);
+  color: #c96a6a;
+  filter: drop-shadow(0 4px 10px rgba(201, 106, 106, 0.25));
+}
+
+.scratch-date {
+  font-family: var(--font-accent);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.scratch-time {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--olive);
+  letter-spacing: 0.1em;
+}
+
+.scratch-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  touch-action: none; /* essential so scratching doesn't scroll the page on mobile */
+  transition: opacity 0.05s linear;
+}
+
+.scratch-hint {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--olive);
+  opacity: 0.8;
+}

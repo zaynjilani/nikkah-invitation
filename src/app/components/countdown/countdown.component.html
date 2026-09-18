@@ -1,0 +1,32 @@
+<section class="countdown-section" aria-labelledby="countdown-heading">
+  <h2 id="countdown-heading" class="countdown-heading" appScrollReveal>
+    Counting Down to Our Nikkah
+  </h2>
+
+  <div class="gold-divider" appScrollReveal [revealDelay]="100"></div>
+
+  <ng-container *ngIf="!hasArrived; else arrivedTpl">
+    <div class="countdown-grid" appScrollReveal [revealDelay]="200" role="timer" aria-live="polite">
+      <div class="countdown-card">
+        <span class="countdown-card__value">{{ countdown.days }}</span>
+        <span class="countdown-card__label">Days</span>
+      </div>
+      <div class="countdown-card">
+        <span class="countdown-card__value">{{ countdown.hours }}</span>
+        <span class="countdown-card__label">Hours</span>
+      </div>
+      <div class="countdown-card">
+        <span class="countdown-card__value">{{ countdown.minutes }}</span>
+        <span class="countdown-card__label">Minutes</span>
+      </div>
+      <div class="countdown-card">
+        <span class="countdown-card__value" [class.tick]="changedUnit === 'seconds'">{{ countdown.seconds }}</span>
+        <span class="countdown-card__label">Seconds</span>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #arrivedTpl>
+    <p class="countdown-arrived" appScrollReveal>Alhamdulillah, the day has arrived.</p>
+  </ng-template>
+</section>

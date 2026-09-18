@@ -1,0 +1,11 @@
+<section class="curtain-scene" aria-hidden="true">
+  <div class="curtain curtain--left" [class.is-open]="isOpening">
+    <div class="curtain__fold" *ngFor="let f of [1,2,3,4,5,6]"></div>
+    <div class="curtain__tassel"></div>
+  </div>
+  <div class="curtain curtain--right" [class.is-open]="isOpening">
+    <div class="curtain__fold" *ngFor="let f of [1,2,3,4,5,6]"></div>
+    <div class="curtain__tassel"></div>
+  </div>
+  <div class="curtain-glow" [class.is-open]="isOpening"></div>
+</section>

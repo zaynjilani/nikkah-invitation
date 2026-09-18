@@ -1,0 +1,23 @@
+<section class="scratch-section" aria-labelledby="scratch-heading">
+  <p id="scratch-heading" class="scratch-heading" appScrollReveal>Scratch to Reveal</p>
+
+  <div #stage class="scratch-stage" appScrollReveal [revealDelay]="150">
+    <div class="scratch-stage__content">
+      <span class="scratch-heart" aria-hidden="true">❤</span>
+      <p class="scratch-date">{{ invitation.date }}</p>
+      <p class="scratch-time">{{ invitation.time }}</p>
+    </div>
+
+    <canvas
+      #scratchCanvas
+      class="scratch-canvas"
+      role="button"
+      tabindex="0"
+      aria-label="Scratch here to reveal the Nikkah date and time"
+      (pointerdown)="onPointerDown($event)"
+      (pointermove)="onPointerMove($event)"
+    ></canvas>
+  </div>
+
+  <!-- <p class="scratch-hint" *ngIf="!revealed">Use your finger or mouse to scratch the surface ✨</p> -->
+</section>

@@ -1,0 +1,82 @@
+.countdown-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.countdown-heading {
+  font-family: var(--font-accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  color: var(--text);
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.countdown-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 1.4rem 0.5rem;
+  background: var(--white);
+  border: 1px solid rgba(184, 155, 94, 0.3);
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+}
+
+.countdown-card__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  color: var(--soft-gold);
+  font-variant-numeric: tabular-nums;
+
+  &.tick {
+    animation: flipIn 500ms ease;
+  }
+}
+
+.countdown-card__label {
+  font-family: var(--font-body);
+  font-size: clamp(0.65rem, 1.4vw, 0.8rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.countdown-arrived {
+  margin-top: 2rem;
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: var(--text);
+}
+
+@keyframes flipIn {
+  from {
+    opacity: 0.3;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 420px) {
+  .countdown-grid {
+    gap: 0.5rem;
+  }
+  .countdown-card {
+    padding: 1rem 0.25rem;
+    border-radius: 10px;
+  }
+}

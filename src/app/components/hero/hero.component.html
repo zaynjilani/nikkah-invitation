@@ -1,0 +1,36 @@
+<header class="hero">
+  <div class="hero__pattern" aria-hidden="true"></div>
+
+  <p class="hero__eyebrow" appScrollReveal>{{ invitation.event }}</p>
+
+  <div class="hero__florals" aria-hidden="true">
+    <span class="floral floral--left">✿</span>
+    <span class="floral floral--right">✿</span>
+  </div>
+
+  <h1 class="hero__names" appScrollReveal [revealDelay]="150">
+    <span class="hero__names-line">{{ invitation.groom }}</span>
+    <span class="hero__ampersand">&amp;</span>
+    <span class="hero__names-line">{{ invitation.bride }}</span>
+  </h1>
+
+  <img
+    class="hero__illustration"
+    src="assets/images/images.jpg"
+    alt="Illustration of the bride and groom holding hands"
+    loading="lazy"
+    appScrollReveal
+    [revealDelay]="250"
+  />
+
+  <div class="gold-divider" appScrollReveal [revealDelay]="350"></div>
+
+  <!-- <div class="hero__datetime" appScrollReveal [revealDelay]="450">
+    <p class="hero__date">{{ invitation.date }}</p>
+    <p class="hero__time">{{ invitation.time }}</p>
+  </div> -->
+
+  <div class="hero__scroll-cue" aria-hidden="true">
+    <span></span>
+  </div>
+</header>
