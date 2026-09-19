@@ -50,7 +50,7 @@ export const invitation: InvitationConfig = {
 
   venue: {
     name: 'Nikkah Ceremony',
-    address: 'B, 104, Sector 11-A Sector 11 A North Karachi, l, Pakistan',
+    address: 'TriStar Ballroom, 104, Sector 11-A Sector 11 A North Karachi, l, Pakistan',
     latitude: 0,
     longitude: 0
   }
